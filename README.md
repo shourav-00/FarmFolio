@@ -1,5 +1,9 @@
 # FarmFolio - Agriculture Marketplace Platform
 
+
+
+Next.js Llive Link:https://farm-folio.vercel.app/
+
 FarmFolio is a modern agricultural marketplace platform that connects farmers directly with consumers. It allows farmers to list their fresh produce while enabling customers to discover and purchase farm-fresh products locally.
 
 ---
@@ -36,5 +40,5 @@ FarmFolio is a modern agricultural marketplace platform that connects farmers di
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/shourav-00/FarmFolio.git>
 cd tutionmedia
