@@ -592,7 +592,8 @@ export default function RegisterPage() {
           router.push("/login?message=Registration successful! Please login.");
         } else {
           // Success - redirect to home
-          alert("🎉 Registration successful! Welcome to FarmFolio!");
+        
+          toast.success(' Registration successful! Welcome to FarmFolio!')
           window.location.href = "/";
         }
       } else {

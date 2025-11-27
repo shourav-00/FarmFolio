@@ -35,7 +35,7 @@ const UpdateProductPage = () => {
           setFormData(data);
         })
         .catch((err) => {
-          alert("Error loading product data");
+          //alert("Error loading product data");
         });
     }
   }, [id]);
@@ -67,7 +67,7 @@ const UpdateProductPage = () => {
         router.push("/products");
       })
       .catch((err) => {
-        alert("Error updating product");
+        //alert("Error updating product");
         setIsLoading(false);
       });
   };

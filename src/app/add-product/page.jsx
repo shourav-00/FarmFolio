@@ -184,7 +184,7 @@ const AddProductPage = () => {
         toast.success("Added successfully");
       })
       .catch((err) => {
-        alert("error");
+     
         setIsLoading(false);
       });
   };

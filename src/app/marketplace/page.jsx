@@ -35,7 +35,7 @@ const Page = () => {
   }
 
   const handleFarmer = () => {
-    alert("jjjj");
+      toast.success('Calling....');
   };
 
   return (
