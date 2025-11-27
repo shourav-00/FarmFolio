@@ -31,7 +31,8 @@ const Home = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+    <div className="bg-gray-200">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -600,7 +601,7 @@ const Home = () => {
 
 
 
-  <section>
+  <section className="my-30">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div className="text-center mb-16">
       <div className="inline-flex items-center gap-4 mb-6">
@@ -616,10 +617,10 @@ const Home = () => {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
       {/* Step 1 */}
       <div className="group relative">
-        <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-green-100 hover:border-green-200 transform hover:-translate-y-3 h-full">
+        <div className="bg-green-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-green-100 hover:border-green-200 transform hover:-translate-y-3 h-full">
           <div className="relative mb-8">
             <div className="w-20 h-20 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white text-lg font-bold">
@@ -642,7 +643,7 @@ const Home = () => {
 
       {/* Step 2 */}
       <div className="group relative">
-        <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-green-100 hover:border-green-200 transform hover:-translate-y-3 h-full">
+        <div className="bg-green-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-green-100 hover:border-green-200 transform hover:-translate-y-3 h-full">
           <div className="relative mb-8">
             <div className="w-20 h-20 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white text-lg font-bold">
@@ -665,7 +666,7 @@ const Home = () => {
 
       {/* Step 3 */}
       <div className="group relative">
-        <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-green-100 hover:border-green-200 transform hover:-translate-y-3 h-full">
+        <div className="bg-green-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-green-100 hover:border-green-200 transform hover:-translate-y-3 h-full">
           <div className="relative mb-8">
             <div className="w-20 h-20 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white text-lg font-bold">
@@ -731,6 +732,7 @@ const Home = () => {
   </div>
 </section>
       
+    </div>
     </div>
   );
 };
