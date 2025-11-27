@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const UpdateProductPage = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +62,8 @@ const UpdateProductPage = () => {
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
-        alert("Product updated successfully!");
+      
+        toast.success('Updated successfully')
         router.push("/products");
       })
       .catch((err) => {
