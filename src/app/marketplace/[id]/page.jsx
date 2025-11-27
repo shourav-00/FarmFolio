@@ -18,22 +18,19 @@ import {
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-
-
 const page = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const { data: session, status } = useSession();
 
-  const router=useRouter();
+  const router = useRouter();
 
-
-  const handleAddProduct=()=>{
-        router.push('/marketplace')
-  }
+  const handleAddProduct = () => {
+    router.push("/marketplace");
+  };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/marketplace/${id}`)
+    fetch(`https://farmfolio-server-api.vercel.app/marketplace/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -53,27 +50,25 @@ const page = () => {
     );
   }
 
-  const handleFarmer=()=>{
-    toast.success('Calling....')
-  }
+  const handleFarmer = () => {
+    toast.success("Calling....");
+  };
   return (
     <div>
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link href='/marketplace'>
-     
-            <button className="flex items-center gap-2 py-4 text-black hover:text-green-700 transition-colors">
-                <IoArrowBackCircleSharp className="w-8 h-8"/>
-              <span className="font-semibold">Back </span>
-            </button>
-                   </Link>
+            <Link href="/marketplace">
+              <button className="flex items-center gap-2 py-4 text-black hover:text-green-700 transition-colors">
+                <IoArrowBackCircleSharp className="w-8 h-8" />
+                <span className="font-semibold">Back </span>
+              </button>
+            </Link>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          
             <div className="w-full lg:w-[60%] xl:w-[55%]">
               <div className="rounded-2xl overflow-hidden shadow-lg bg-white">
                 <img
@@ -84,9 +79,7 @@ const page = () => {
               </div>
             </div>
 
-        
             <div className="w-full lg:w-[40%] xl:w-[45%] space-y-6">
-            
               <div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {product.name}
@@ -147,7 +140,7 @@ const page = () => {
 
                 <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
                   <div className="flex items-center gap-3">
-                   <GiRegeneration className="w-8 h-8" />
+                    <GiRegeneration className="w-8 h-8" />
                     <div>
                       <p className="text-sm text-gray-500">Rating-</p>
                       <p className="font-semibold text-gray-900">
@@ -158,7 +151,6 @@ const page = () => {
                 </div>
               </div>
 
-        
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
                   Description
@@ -168,14 +160,18 @@ const page = () => {
                 </p>
               </div>
 
-              
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              
-                <button onClick={handleAddProduct} className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg">
+                <button
+                  onClick={handleAddProduct}
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg"
+                >
                   Add to Cart
                 </button>
-         
-                <button onClick={handleFarmer} className="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300">
+
+                <button
+                  onClick={handleFarmer}
+                  className="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300"
+                >
                   Contact Farmer
                 </button>
               </div>

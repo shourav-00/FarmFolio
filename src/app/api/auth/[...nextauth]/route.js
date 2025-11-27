@@ -73,16 +73,19 @@ const authOptions = {
         try {
           console.log("🔐 Auth attempt for:", credentials.email);
 
-          const response = await fetch("http://localhost:5000/api/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              email: credentials.email,
-              password: credentials.password,
-            }),
-          });
+          const response = await fetch(
+            "https://farmfolio-server-api.vercel.app/api/login",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email: credentials.email,
+                password: credentials.password,
+              }),
+            }
+          );
 
           console.log("📡 Response status:", response.status);
 

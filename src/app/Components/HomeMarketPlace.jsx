@@ -1,26 +1,27 @@
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 const HomeMarketPlace = () => {
-    const [products,setProduct]=useState([]);
-    const [load,setLoad]=useState(true);
-    useEffect(()=>{
-        fetch('http://localhost:5000/homemarketplace')
-        .then(res=>res.json())
-        .then(data=>{
-            setProduct(data);
-            setLoad(false);
-        })
-    },[]);
-    if(load){
-        return <div className="flex justify-center items-center min-h-screen">
-        <span className="loading loading-bars loading-xl"></span>
-    </div>
-   
-    }
+  const [products, setProduct] = useState([]);
+  const [load, setLoad] = useState(true);
+  useEffect(() => {
+    fetch("https://farmfolio-server-api.vercel.app/homemarketplace")
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        setLoad(false);
+      });
+  }, []);
+  if (load) {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 p-6">
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    );
+  }
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {products && products.length > 0 ? (
           products.map((item) => (
@@ -63,14 +64,11 @@ const HomeMarketPlace = () => {
                   </div>
                 </div>
                 <Link href={`marketplace/${item._id}`}>
-                   <button className="bg-green-600 text-white font-semibold py-2 rounded-md hover:bg-green-700 transition-all w-full">
-                  View
-                </button>
+                  <button className="bg-green-600 text-white font-semibold py-2 rounded-md hover:bg-green-700 transition-all w-full">
+                    View
+                  </button>
                 </Link>
-               
               </div>
-
-              
             </div>
           ))
         ) : (
@@ -85,7 +83,7 @@ const HomeMarketPlace = () => {
         )}
       </div>
     </div>
-    );
+  );
 };
 
 export default HomeMarketPlace;

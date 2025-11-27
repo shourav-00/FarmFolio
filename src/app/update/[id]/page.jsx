@@ -18,7 +18,7 @@ const UpdateProductPage = () => {
     image: "",
     location: "",
   });
-  
+
   const [isLoading, setIsLoading] = useState(false);
   const { data: session } = useSession();
   const user = session?.user;
@@ -28,22 +28,22 @@ const UpdateProductPage = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5000/addedItems/${id}`)
+      fetch(`https://farmfolio-server-api.vercel.app/addedItems/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setFormData(data);
         })
         .catch((err) => {
-          alert('Error loading product data');
+          alert("Error loading product data");
         });
     }
   }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -51,21 +51,21 @@ const UpdateProductPage = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch(`http://localhost:5000/update-products/${id}`, {
+    fetch(`https://farmfolio-server-api.vercel.app/update-products/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setIsLoading(false);
-        alert('Product updated successfully!');
-        router.push('/products');
+        alert("Product updated successfully!");
+        router.push("/products");
       })
-      .catch(err => {
-        alert('Error updating product');
+      .catch((err) => {
+        alert("Error updating product");
         setIsLoading(false);
       });
   };

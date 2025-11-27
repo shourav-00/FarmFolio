@@ -32,10 +32,10 @@ const Page = () => {
   const [products, setProducts] = useState([]);
   const { data: session, status } = useSession();
   const user = session?.user;
-  const router=useRouter()
+  const router = useRouter();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myproducts`)
+    fetch(`https://farmfolio-server-api.vercel.app/myproducts`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -43,28 +43,29 @@ const Page = () => {
   }, []);
 
   const handleDelete = (id) => {
-        fetch(`http://localhost:5000/manage-products/${id}`,{
-            method:"DELETE",
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            toast.success('Deleted')
-            setProducts(products.filter(product => product._id !== id));
-            
-        })
-        .catch(err=>{
-           toast.error(e.message);
-        })
-    }
-  
-    if(status=='loading'){
-        return <div className='flex justify-center items-center min-h-screen'>
-            <span className="loading loading-bars loading-lg"></span>
-<span className="loading loading-bars loading-xl"></span>
-        </div>
-    }
+    fetch(`https://farmfolio-server-api.vercel.app/manage-products/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Deleted");
+        setProducts(products.filter((product) => product._id !== id));
+      })
+      .catch((err) => {
+        toast.error(e.message);
+      });
+  };
+
+  if (status == "loading") {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-bars loading-lg"></span>
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    );
+  }
   const handleUpdate = (id) => {
-    router.push(`/update/${id}`)
+    router.push(`/update/${id}`);
   };
 
   return (
@@ -107,17 +108,13 @@ const Page = () => {
             {products.map((product, index) => (
               <div key={product._id} className="mb-16 last:mb-0">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 p-8 border border-green-100">
-              
                   <div className="w-full lg:w-[45%] xl:w-[40%]">
                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-green-50 to-emerald-100">
-                      
                       <img
                         className="w-full h-72 lg:h-96 object-cover rounded-2xl transform hover:scale-105 transition-transform duration-500"
-                        src={product.image || user.image }
-                        alt={product.title} 
+                        src={product.image || user.image}
+                        alt={product.title}
                       />
-                      
-                      
                     </div>
                   </div>
 
@@ -301,5 +298,5 @@ const Page = () => {
       )}
     </div>
   );
-}
+};
 export default Page;

@@ -18,7 +18,7 @@ const Page = () => {
   const user = session?.user;
 
   useEffect(() => {
-    fetch("http://localhost:5000/marketplace")
+    fetch("https://farmfolio-server-api.vercel.app/marketplace")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -35,10 +35,8 @@ const Page = () => {
   }
 
   const handleFarmer = () => {
-  
     alert("jjjj");
   };
- 
 
   return (
     <div className="p-5">
@@ -225,10 +223,7 @@ const Page = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <button
-                  
-                    className="bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-lg flex items-center justify-center gap-2"
-                  >
+                  <button className="bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-lg flex items-center justify-center gap-2">
                     <span>🛒</span>
                     Shop Best Sellers
                   </button>

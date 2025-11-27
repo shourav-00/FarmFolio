@@ -22,20 +22,21 @@ const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
-    fetch("http://localhost:5000/myproducts")
+    fetch("https://farmfolio-server-api.vercel.app/myproducts")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       });
   }, []);
 
-
-  if(status=='loading'){
-        return <div className='flex justify-center items-center min-h-screen'>
-            <span className="loading loading-bars loading-lg"></span>
-<span className="loading loading-bars loading-xl"></span>
-        </div>
-    }
+  if (status == "loading") {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-bars loading-lg"></span>
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    );
+  }
 
   const handleProduct = (id) => {
     router.push("/manage-products");
@@ -45,7 +46,6 @@ const Page = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
       {user ? (
         <>
-          
           <div className="bg-gradient-to-r from-green-600 to-emerald-700 text-white shadow-lg rounded-2xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
               <div className="flex flex-col sm:flex-row justify-between items-center py-8 mt-5 p-5">

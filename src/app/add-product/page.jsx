@@ -35,8 +35,6 @@ const AddProductPage = () => {
       [name]: value,
     }));
 
-     
-
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -173,22 +171,22 @@ const AddProductPage = () => {
       location,
     };
     //Api send data->POST
-    fetch("http://localhost:5000/addedItems", {
+    fetch("https://farmfolio-server-api.vercel.app/addedItems", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(prod),
     })
-      .then(res=>res.json())
-      .then(data=>{
+      .then((res) => res.json())
+      .then((data) => {
         setIsLoading(false);
-        toast.success("Added successfully")
+        toast.success("Added successfully");
       })
-      .catch(err=>{
-        alert('error')
+      .catch((err) => {
+        alert("error");
         setIsLoading(false);
-      })
+      });
   };
 
   const getInputClassName = (fieldName) => {
@@ -207,20 +205,22 @@ const AddProductPage = () => {
     router.push("/login");
   };
 
-
-
-  if(isLoading){
-        return <div className='flex justify-center items-center min-h-screen'>
-            <span className="loading loading-bars loading-lg"></span>
-<span className="loading loading-bars loading-xl"></span>
-        </div>
-    }
-    if(status=='loading'){
-        return <div className='flex justify-center items-center min-h-screen'>
-            <span className="loading loading-bars loading-lg"></span>
-<span className="loading loading-bars loading-xl"></span>
-        </div>
-    }
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-bars loading-lg"></span>
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    );
+  }
+  if (status == "loading") {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-bars loading-lg"></span>
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#e3fcee] p-4 sm:p-6 bg-[#e3fcee]">
