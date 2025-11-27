@@ -15,6 +15,9 @@ import { MdOutlineTrackChanges } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import Link from "next/link";
 
+import { RiSeedlingFill } from "react-icons/ri";
+
+
 const Home = () => {
   const router = useRouter();
 
@@ -31,7 +34,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gray-200">
+    <div className="">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
       {/* Hero Section */}
       <motion.div
@@ -174,29 +177,7 @@ const Home = () => {
 
       {/*------------------ Products Section -------------*/}
 
-      {/* <section className="py-16 bg-green-50 rounded-3xl">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-4 mb-6">
-            <div className="w-20 h-px bg-green-300"></div>
-            <span className="text-green-600 font-semibold text-lg">FEATURED PRODUCE</span>
-            <div className="w-20 h-px bg-green-300"></div>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-green-900 mb-4">
-            Fresh From Our Farms
-          </h2>
-        </div>
-
-       <HomeMarketPlace/>
-
-        <div className="text-center mt-8">
-          <button 
-            onClick={handleMarketplace}
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
-          >
-            View All Products
-          </button>
-        </div>
-      </section> */}
+      
       <section className="py-12 md:py-16 bg-white rounded-3xl shadow-sm border border-green-100 mt-30">
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-flex items-center gap-4 mb-4 md:mb-6">
@@ -509,98 +490,6 @@ const Home = () => {
       </section>
 
 
-            {/* How It Works Section */}
-{/* How It Works Section */}
-<section className="py-16 bg-gradient-to-br from-green-50 to-emerald-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <div className="inline-flex items-center gap-4 mb-6">
-        <div className="w-16 md:w-20 h-px bg-green-300"></div>
-        <span className="text-green-600 font-semibold text-base md:text-lg">SIMPLE PROCESS</span>
-        <div className="w-16 md:w-20 h-px bg-green-300"></div>
-      </div>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-900 mb-4">
-        How FarmFolio Works
-      </h2>
-      <p className="text-green-700 text-base md:text-lg max-w-2xl mx-auto">
-        Getting fresh farm products has never been easier. Here's how our simple process works
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-      {/* Step 1 */}
-      <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 md:p-8 border border-green-100 hover:border-green-300 transform hover:-translate-y-2">
-        <div className="relative mb-6">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-green-50 group-hover:bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110">
-            <span className="text-2xl md:text-3xl">🛒</span>
-          </div>
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 group-hover:bg-green-600 text-white rounded-full flex items-center justify-center font-bold transition-colors duration-300 shadow-lg">
-            1
-          </div>
-        </div>
-        <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-4 text-center">Browse Products</h3>
-        <p className="text-green-700 text-center leading-relaxed">
-          Explore our marketplace filled with fresh vegetables, fruits, and farm products. 
-          Each item comes with photos, farmer details, and honest pricing.
-        </p>
-      </div>
-
-      {/* Step 2 */}
-      <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 md:p-8 border border-green-100 hover:border-green-300 transform hover:-translate-y-2">
-        <div className="relative mb-6">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-green-50 group-hover:bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110">
-            <span className="text-2xl md:text-3xl">📱</span>
-          </div>
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 group-hover:bg-green-600 text-white rounded-full flex items-center justify-center font-bold transition-colors duration-300 shadow-lg">
-            2
-          </div>
-        </div>
-        <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-4 text-center">Place Your Order</h3>
-        <p className="text-green-700 text-center leading-relaxed">
-          Select your favorite items, choose quantities, and place your order. 
-          We connect you directly with farmers for the freshest experience.
-        </p>
-      </div>
-
-      {/* Step 3 */}
-      <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 md:p-8 border border-green-100 hover:border-green-300 transform hover:-translate-y-2">
-        <div className="relative mb-6">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-green-50 group-hover:bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110">
-            <span className="text-2xl md:text-3xl">🏠</span>
-          </div>
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 group-hover:bg-green-600 text-white rounded-full flex items-center justify-center font-bold transition-colors duration-300 shadow-lg">
-            3
-          </div>
-        </div>
-        <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-4 text-center">Fresh Delivery</h3>
-        <p className="text-green-700 text-center leading-relaxed">
-          Receive farm-fresh products at your doorstep. We ensure quick delivery 
-          so you get the highest quality while it's still perfectly fresh.
-        </p>
-      </div>
-    </div>
-
-  
- 
-
-    {/* CTA Button */}
-    <div className="text-center mt-12">
-      <Link href="/marketplace">
-        <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg flex items-center gap-3 mx-auto">
-          <span>🌱</span>
-          Start Your Farm Journey
-          <span>→</span>
-        </button>
-      </Link>
-      <p className="text-green-600 mt-4 text-sm">
-        Join thousands of happy customers enjoying fresh farm products
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
   <section className="my-30">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div className="text-center mb-16">
@@ -730,6 +619,95 @@ const Home = () => {
       </div>
     </div>
   </div>
+</section>
+
+
+{/* Final Call-to-Action Section */}
+<section className="py-20 relative overflow-hidden">
+  {/* Background with beautiful farm image */}
+  <div className="absolute inset-0">
+    <img 
+      src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
+      alt="Fresh farm harvest"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-emerald-800/80"></div>
+  </div>
+
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center text-white">
+      {/* Main Heading */}
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Taste the True Essence of <span className="text-green-300">Farm Fresh</span>
+      </h2>
+      
+      {/* Subtitle */}
+      <p className="text-xl md:text-2xl text-green-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Every product tells a story of dedication, quality, and the simple joy of nature's finest offerings
+      </p>
+
+      {/* Benefits Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+        <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+          <div className="text-2xl mb-4"><RiSeedlingFill className="w-12 h-12" /></div>
+          <h4 className="text-lg font-semibold mb-2">100% Natural</h4>
+          <p className="text-green-100 text-sm">No chemicals, no preservatives, just pure nature</p>
+        </div>
+        
+        <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+          <div className="text-2xl mb-4"><GiFarmer className="w-12 h-12" /></div>
+          <h4 className="text-lg font-semibold mb-2">Direct from Farmers</h4>
+          <p className="text-green-100 text-sm">Support local agriculture and real farming families</p>
+        </div>
+        
+        <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+          <div className="text-2xl mb-4"><TbTruckDelivery className="w-12 h-12"/></div>
+          <h4 className="text-lg font-semibold mb-2">Fast Delivery</h4>
+          <p className="text-green-100 text-sm">Fresh from farm to your kitchen in record time</p>
+        </div>
+      </div>
+
+      {/* Main CTA */}
+      <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20 max-w-2xl mx-auto">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          Your Journey to Better Eating Starts Here
+        </h3>
+        <p className="text-green-100 mb-6 text-lg">
+          Experience the difference that fresh, locally-sourced produce makes in every meal
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button className="bg-white text-green-700 hover:bg-green-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-lg">
+            Explore Our Fresh Selection
+          </button>
+          <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-lg">
+            Learn Our Story
+          </button>
+        </div>
+      </div>
+
+      {/* Trust Badges */}
+      <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-80">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-green-300">10,000+</div>
+          <div className="text-green-100 text-sm">Happy Families</div>
+        </div>
+        <div className="w-px h-8 bg-green-300/50"></div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-green-300">50+</div>
+          <div className="text-green-100 text-sm">Local Farms</div>
+        </div>
+        <div className="w-px h-8 bg-green-300/50"></div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-green-300">98%</div>
+          <div className="text-green-100 text-sm">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom Gradient */}
+  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
 </section>
       
     </div>
