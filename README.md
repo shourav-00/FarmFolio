@@ -27,7 +27,7 @@ FarmFolio is a modern agricultural marketplace platform that connects farmers di
 - **Carousel**: Swiper.js  
 - **Deployment**: Netlify / Render  
 
----
+
 
 ## Setup & Installation
 
@@ -36,9 +36,3 @@ FarmFolio is a modern agricultural marketplace platform that connects farmers di
 - Node.js 18+  
 - npm or yarn package manager  
 
-### Installation Steps
-
-1. Clone the repository:
-```bash
-git clone <https://github.com/shourav-00/FarmFolio.git>
-cd tutionmedia
